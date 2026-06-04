@@ -1,3 +1,19 @@
+import { supabase }
+from "./supabase.js";
+
+async function test() {
+
+  const { data, error } =
+    await supabase
+      .from("songs")
+      .select("*");
+
+  console.log("DATA:", data);
+  console.log("ERROR:", error);
+
+}
+
+test();
 let currentSong = null;
 
 const audio = new Audio();
