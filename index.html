@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OsyPod</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="top-bar">
+
+    <div class="logo">
+        Osy<span>Pod</span>
+    </div>
+
+    <button id="themeToggle">
+        🌙
+    </button>
+
+</header>
+
+<section id="home" class="screen active">
+
+    <div class="search-container">
+
+        <input
+            type="text"
+            placeholder="Search music..."
+            class="search-input"
+        >
+
+    </div>
+
+    <h2 class="section-title">
+        Mood Picks
+    </h2>
+
+    <div class="mood-grid">
+
+        <div class="mood-card">🔥 Workout</div>
+        <div class="mood-card">🌙 Night</div>
+        <div class="mood-card">🌧 Chill</div>
+        <div class="mood-card">❤️ Romantic</div>
+
+    </div>
+
+    <h2 class="section-title">
+        Recently Played
+    </h2>
+
+    <div id="songList" class="song-list"></div>
+
+</section>
+
+<section id="search" class="screen">
+    <h2>Search</h2>
+</section>
+
+<section id="library" class="screen">
+    <h2>Library</h2>
+
+    <input
+        type="file"
+        id="musicUpload"
+        accept=".mp3,.wav,.ogg"
+        multiple
+    >
+</section>
+
+<section id="profile" class="screen">
+
+    <div class="profile-card">
+
+        <div class="profile-avatar">
+            🎧
+        </div>
+
+        <h2>Music Explorer</h2>
+
+        <p>Listening Aura: 🔥 Energetic</p>
+
+    </div>
+
+</section>
+
+<!-- PLAYER MODAL -->
+
+<div id="playerModal">
+
+    <button id="closePlayer">
+        ✕
+    </button>
+
+    <div class="vinyl">
+
+        <img
+            id="albumCover"
+            src="assets/covers/default.jpg"
+            alt=""
+        >
+
+    </div>
+
+    <h2 id="currentTitle">
+        Select Song
+    </h2>
+
+    <p id="currentArtist">
+        OsyPod
+    </p>
+
+    <input
+        type="range"
+        id="progress"
+        value="0"
+    >
+
+    <div class="controls">
+
+        <button id="prevBtn">⏮</button>
+
+        <button id="playBtn">
+            ▶
+        </button>
+
+        <button id="nextBtn">⏭</button>
+
+    </div>
+
+</div>
+
+<!-- FLOATING PLAYER -->
+
+<div id="pillPlayer">
+
+    <img
+        id="pillCover"
+        src="assets/covers/default.jpg"
+        alt=""
+    >
+
+    <div class="pill-info">
+
+        <h4 id="pillTitle">
+            No Song Selected
+        </h4>
+
+        <p id="pillArtist">
+            OsyPod
+        </p>
+
+    </div>
+
+    <button id="miniPlay">
+        ▶
+    </button>
+
+</div>
+
+<!-- NAVIGATION -->
+
+<nav id="dock">
+
+    <button data-screen="home">
+        🏠
+    </button>
+
+    <button data-screen="search">
+        🔍
+    </button>
+
+    <button id="vinylHub">
+        ●
+    </button>
+
+    <button data-screen="library">
+        📚
+    </button>
+
+    <button data-screen="profile">
+        👤
+    </button>
+
+</nav>
+
+<script src="data/songs.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
